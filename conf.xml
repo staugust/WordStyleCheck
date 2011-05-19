@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+	<style type="paragraph" styleId = "a">
+		<name val="normal"/>
+		<pagebreak val = "off"/>
+		<pPr>
+			<jc val = "both"/>
+			<outlinelvl val = "9"/>
+		</pPr>
+		<rPr>
+			<rFonts ascii="Times New Roman" eastAsia="宋体" hAnsi="Times New Roman" cs="Times New Roman"/>
+			<b val = "off"/>
+			<i val = "off"/>
+			<u val = "off"/>
+			<sz val = "24"/>
+		</rPr>
+	</style>
+	<style type="paragraph" styleId = "b">
+		<name val="heading1"/>
+		<pagebreak val = "on"/>
+		<pPr>
+			<jc val = "center"/>
+			<outlinelvl val = "0"/>
+		</pPr>
+		<rPr>
+			<rFonts ascii="Times New Roman" eastAsia="宋体" hAnsi="Times New Roman" cs="Times New Roman"/>
+			<b val = "on"/>
+			<i val = "off"/>
+			<u val = "off"/>
+			<sz val = "36"/>
+		</rPr>
+	</style>
+	<style type="paragraph" styleId="c">
+		<name val="heading2"/>
+		<pagebreak val = "off"/>
+		<pPr>
+			<jc val = "left"/>
+			<outlinelvl val = "1"/>
+		</pPr>
+		<rPr>
+			<rFonts ascii="Times New Roman" eastAsia="黑体" hAnsi="Times New Roman" cs="Times New Roman"/>
+			<b val = "on"/>
+			<i val = "off"/>
+			<u val = "off"/>
+			<sz val = "30"/>
+		</rPr>
+	</style>
+	<style type="paragraph" styleId ="d">
+		<name val="heading3"/>
+		<pagebreak val = "off"/>
+		<pPr>
+			<jc val = "left"/>
+			<outlinelvl val = "2"/>
+		</pPr>
+		<rPr>
+			<rFonts  ascii="Times New Roman" eastAsia="黑体" hAnsi="Times New Roman" cs="Times New Roman"/>
+			<b val = "on"/>
+			<i val = "off"/>
+			<u val = "off"/>
+			<sz val = "28"/>
+		</rPr>
+	</style>
+	<style type="paragraph" styleId = "e">
+		<name val="heading4"/>
+		<pagebreak val = "off"/>
+		<pPr>
+			<jc val = "left"/>
+			<outlinelvl val = "3"/>
+		</pPr>
+		<rPr>
+			<rFonts ascii="Times New Roman" eastAsia="黑体" hAnsi="Times New Roman" cs="Times New Roman"/>
+			<b val = "on"/>
+			<i val = "off"/>
+			<u val = "off"/>
+			<sz val = "24"/>
+		</rPr>
+	</style>
+	<table styleId = "t1">
+	    <pPr>
+	        <jc val = "center"/>
+	    </pPr>
+	    <tblPr>
+	        <caption>
+	            <sz  val= "21"/>
+	            <jc val = "center"/>
+	            <rFonts ascii="Times New Roman" eastAsia="宋体" hAnsi="Times New Roman" cs="Times New Roman"/>
+	        </caption>
+	        <tblBorders>
+	            <top val="single" sz="12" space="0" color="auto"/>
+                <left val="none" sz="0" space="0" color="auto"/>
+                <bottom val="single" sz="12" space="0" color="auto"/>
+                <right val="none" sz="0" space="0" color="auto"/>
+                <insideH val="single" sz="4" space="0" color="auto"/>
+                <insideV val="single" sz="4" space="0" color="auto"/>
+	        </tblBorders>
+	        <tblCellMar>
+	            <top w="0" type="dxa"/>
+                <left w="108" type="dxa"/>
+                <bottom w="0" type="dxa"/>
+                <right w="108" type="dxa"/>
+	        </tblCellMar>
+	    </tblPr>
+	</table>
+	<pic styleId = "p1">
+	    <jc val = "center"/>
+	    <controlSize val = "1"/>
+	</pic>
+	<header styleId = "h1"><context val = "哈尔滨工业大学本科毕业设计（论文）"/><jc val = "center"/>
+	    <sz val = "18"/>
+	    <rFonts ascii="Times New Roman" eastAsia="宋体" hAnsi="Times New Roman" cs="Times New Roman"/>
+		<b val = "off"/>
+	    <i val = "off"/>
+		<u val = "off"/>
+	</header>
+	<secPr styleId = "s1">
+	    <Characters val = "15000"/>
+	    <Title val = "25"/>	
+	    <pgSz w='11907' h='16840'/>    
+	</secPr>
+</doc>
