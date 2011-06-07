@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>test</title>
+<script type="text/javascript">
+	function addPara(){
+		var tempNode,tempNode2;
+  	 	var objTableNode = document.createElement("TABLE");
+ 		var objTBodyNode = document.createElement("TBODY");
+  		 // 建立rowsXcols个单元格
+		 /*
+   		for (var j = 0; j < 3; j++){ 
+     	 tempNode = document.createElement("TR");
+      	objTBodyNode.appendChild(tempNode);
+    	  for (var i = 0; i < 3; i++) {
+          tempNode = document.createElement("TD");
+          tempNode2 = document.createTextNode("单元格");
+          tempNode.appendChild(tempNode2);
+          objTBodyNode.childNodes[j].appendChild(tempNode);
+      }
+   }   */
+   //生成表格
+   var trNode,tdNode1,tdNode2;
+   var labelNode1,labelNode2,ltNode1,ltNode2;
+   //添加一行
+   trNode = document.createElement("TR");
+   objTBodyNode.appendChild(trNode);
+   //添加一列
+   tdNode1 = document.createElement("TD");
+   //
+   labelNode1 = document.createElement("LABEL");
+   ltNode1 = document.createTextNode("样式名称:");
+   tdNode1.appendChild(labelNode1);
+   labelNode1.appendChild(ltNode1);
+   //
+   var ipNode;
+   ipNode = document.createElement("input");
+   ipNode.type ="text";
+   tdNode1.appendChild(ipNode);
+   objTBodyNode.childNodes[0].appendChild(tdNode1);
+   //再添加一列
+   tdNode2 = document.createElement("TD");
+   //添加label
+   labelNode1 = document.createElement("LABEL");
+   ltNode1 = document.createTextNode("样式类别：");
+   tdNode2.appendChild(labelNode1);
+   labelNode1.appendChild(ltNode1);
+   //添加一个下拉菜单
+   var seNode = document.createElement("SELECT");
+   var opNode = new Option("请选择","0",true,false);
+   seNode.add(opNode,0);
+   var opNode = new Option("章标题","1",false,false);
+   seNode.add(opNode,1);
+   var opNode = new Option("节标题","2",false,false);
+   seNode.add(opNode,2);
+   var opNode = new Option("条标题","3",false,false);
+   seNode.add(opNode,3);
+   var opNode = new Option("款标题","4",false,false);
+   seNode.add(opNode,4);
+   var opNode = new Option("正文","9",false,false);
+   seNode.add(opNode,5);
+   tdNode2.appendChild(seNode);
+   //结束添加  
+   objTBodyNode.childNodes[0].appendChild(tdNode2);
+   //结束生成一行
+   
+   var trNode,tdNode1,tdNode2;
+   var labelNode1,labelNode2,ltNode1,ltNode2;
+   //添加一行
+   trNode = document.createElement("TR");
+   objTBodyNode.appendChild(trNode);
+   //添加一列
+   tdNode1 = document.createElement("TD");
+   //
+   labelNode1 = document.createElement("LABEL");
+   ltNode1 = document.createTextNode("文字大小:");
+   tdNode1.appendChild(labelNode1);
+   labelNode1.appendChild(ltNode1);
+   //
+   var ipNode;
+   ipNode = document.createElement("input");
+   ipNode.type ="text";
+   tdNode1.appendChild(ipNode);
+   objTBodyNode.childNodes[1].appendChild(tdNode1);
+   //再添加一列
+   tdNode2 = document.createElement("TD");
+   //添加label
+   labelNode1 = document.createElement("LABEL");
+   ltNode1 = document.createTextNode("文字对齐方式：");
+   tdNode2.appendChild(labelNode1);
+   labelNode1.appendChild(ltNode1);
+   //添加一个下拉菜单
+   var seNode = document.createElement("SELECT");
+   var opNode = new Option("请选择","0",true,false);
+   seNode.add(opNode,0);
+   var opNode = new Option("居中","center",false,false);
+   seNode.add(opNode,1);
+   var opNode = new Option("两端对齐","both",false,false);
+   seNode.add(opNode,2);
+   var opNode = new Option("左对齐","left",false,false);
+   seNode.add(opNode,3);
+   var opNode = new Option("右对齐","right",false,false);
+   seNode.add(opNode,4);
+   tdNode2.appendChild(seNode);
+   //结束添加  
+   objTBodyNode.childNodes[1].appendChild(tdNode2);
+   //结束生成一行
+   
+   
+   var trNode,tdNode1,tdNode2;
+   var labelNode1,labelNode2,ltNode1,ltNode2;
+   //添加一行
+   trNode = document.createElement("TR");
+   objTBodyNode.appendChild(trNode);
+   //添加一列
+   tdNode1 = document.createElement("TD");
+   //
+   labelNode1 = document.createElement("LABEL");
+   ltNode1 = document.createTextNode("中文字体:");
+   tdNode1.appendChild(labelNode1);
+   labelNode1.appendChild(ltNode1);
+   //添加一个下拉菜单
+   var seNode = document.createElement("SELECT");
+   var opNode = new Option("请选择","0",true,false);
+   seNode.add(opNode,0);
+   var opNode = new Option("居中","center",false,false);
+   seNode.add(opNode,1);
+   var opNode = new Option("两端对齐","both",false,false);
+   seNode.add(opNode,2);
+   var opNode = new Option("左对齐","left",false,false);
+   seNode.add(opNode,3);
+   var opNode = new Option("右对齐","right",false,false);
+   seNode.add(opNode,4);
+   tdNode1.appendChild(seNode);
+   //结束添加  
+   objTBodyNode.childNodes[2].appendChild(tdNode1);
+   //再添加一列
+   tdNode2 = document.createElement("TD");
+   //添加label
+   labelNode1 = document.createElement("LABEL");
+   ltNode1 = document.createTextNode("英文字体：");
+   tdNode2.appendChild(labelNode1);
+   labelNode1.appendChild(ltNode1);
+   //添加一个下拉菜单
+   var seNode = document.createElement("SELECT");
+   var opNode = new Option("请选择","0",true,false);
+   seNode.add(opNode,0);
+   var opNode = new Option("居中","center",false,false);
+   seNode.add(opNode,1);
+   var opNode = new Option("两端对齐","both",false,false);
+   seNode.add(opNode,2);
+   var opNode = new Option("左对齐","left",false,false);
+   seNode.add(opNode,3);
+   var opNode = new Option("右对齐","right",false,false);
+   seNode.add(opNode,4);
+   tdNode2.appendChild(seNode);
+   //结束添加  
+   objTBodyNode.childNodes[2].appendChild(tdNode2);
+   //结束生成一行
+   
+    var trNode,tdNode1,tdNode2;
+   var labelNode1,labelNode2,ltNode1,ltNode2;
+   //添加一行
+   trNode = document.createElement("TR");
+   objTBodyNode.appendChild(trNode);
+   //添加一列
+   tdNode1 = document.createElement("TD");
+   //
+   labelNode1 = document.createElement("LABEL");
+   ltNode1 = document.createTextNode("hAscii字体:");
+   tdNode1.appendChild(labelNode1);
+   labelNode1.appendChild(ltNode1);
+   //添加一个下拉菜单
+   var seNode = document.createElement("SELECT");
+   var opNode = new Option("请选择","0",true,false);
+   seNode.add(opNode,0);
+   var opNode = new Option("居中","center",false,false);
+   seNode.add(opNode,1);
+   var opNode = new Option("两端对齐","both",false,false);
+   seNode.add(opNode,2);
+   var opNode = new Option("左对齐","left",false,false);
+   seNode.add(opNode,3);
+   var opNode = new Option("右对齐","right",false,false);
+   seNode.add(opNode,4);
+   tdNode1.appendChild(seNode);
+   //结束添加  
+   objTBodyNode.childNodes[3].appendChild(tdNode1);
+   //再添加一列
+   tdNode2 = document.createElement("TD");
+   //添加label
+   labelNode1 = document.createElement("LABEL");
+   ltNode1 = document.createTextNode("Complex Script：");
+   tdNode2.appendChild(labelNode1);
+   labelNode1.appendChild(ltNode1);
+   //添加一个下拉菜单
+   var seNode = document.createElement("SELECT");
+   var opNode = new Option("请选择","0",true,false);
+   seNode.add(opNode,0);
+   var opNode = new Option("居中","center",false,false);
+   seNode.add(opNode,1);
+   var opNode = new Option("两端对齐","both",false,false);
+   seNode.add(opNode,2);
+   var opNode = new Option("左对齐","left",false,false);
+   seNode.add(opNode,3);
+   var opNode = new Option("右对齐","right",false,false);
+   seNode.add(opNode,4);
+   tdNode2.appendChild(seNode);
+   //结束添加  
+   objTBodyNode.childNodes[3].appendChild(tdNode2);
+   //结束生成一行
+ 	//添加一行
+	var trNode,tdNode1,tdNode2;
+   	var labelNode1,labelNode2,labelNode3,ltNode1,ltNode2,ltNode3;
+   	trNode = document.createElement("TR");
+   	objTBodyNode.appendChild(trNode);
+	//添加一行代码结束
+	//添加一列
+	tdNode1 = document.createElement("TD");
+	labelNode1 = document.createElement("LABEL");
+	ltNode1 = document.createTextNode("是否粗体：");
+	tdNode1.appendChild(labelNode1);
+	labelNode1.appendChild(ltNode1);
+	
+	var radioNode1,radioNode2;
+	radioNode1 = document.createElement("input");
+	tdNode1.appendChild(radioNode1);
+	radioNode1.type = "radio";
+	radioNode1.class = "u1";
+    radioNode1.checked = true;
+	radioNode2 = document.createElement("input");
+	tdNode1.appendChild(radioNode2);
+	radioNode2.type = "radio";
+	radioNode2.class = "u1";
+    radioNode2.checked = false;
+	
+	objTBodyNode.childNodes[4].appendChild(tdNode1);
+   
+   //结束生成表格
+   var dNode = document.createElement("DIV");
+   myform.insertBefore(dNode,bt);
+   dNode.appendChild(objTableNode);
+   objTableNode.id = "t1";
+   objTableNode.border = 1;
+   objTableNode.appendChild(objTBodyNode);
+	//	alert("ok");
+	}
+</script>
+<style type="text/css">
+<!--
+.bt{
+	font:"宋体";
+}
+div{
+	background-color:#CC9900;
+	width:80%;
+	margin-left:10%;
+	align:center;
+}
+table{
+	width:60%;
+	margin-left:20%;
+	align:center;
+	background-color:#CCffaa;
+}
+tr{
+	
+	height:20px;
+}
+td{
+	width:50%;
+}
+-->
+</style>
+</head>
+
+<body>
+	<form id="myform" action="">
+		<div id="bt">
+			<input type="button" onclick="addPara()"  value="添加段落样式"/>
+			<input type="button" onclick="addHead()"  value="添加页眉样式"/>
+			<input type="button" onclick="addSect()"  value="添加页面属性样式"/>
+			<input type="submit"  />
+		</div>
+	</form>
+</body>
+</html>
