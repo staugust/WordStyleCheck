@@ -1,0 +1,1472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+	var p = 0;
+	var h = 0;
+	function setParaVis(){
+		p++;
+		if(p == 1)
+		{
+			dp1.removeAttribute('style',0);
+			pNum.value = p;
+		}
+		else if(p == 2)
+		{
+			dp2.removeAttribute('style',0);
+			pNum.value = p;
+		}
+		else if(p == 3)
+		{
+			dp3.removeAttribute('style',0);
+			pNum.value = p;
+		}
+		else if(p == 4)
+		{
+			dp4.removeAttribute('style',0);
+			pNum.value = p;
+		}
+		else if(p == 5)
+		{
+			dp5.removeAttribute('style',0);
+			pNum.value = p;
+		}
+		else if(p == 6)
+		{
+			dp6.removeAttribute('style',0);
+			pNum.value = p;
+		}
+		else{
+			alert("已添加足够多的段落样式！！");
+		}
+	}
+	function setHeaderVis(){
+		h++;
+		if(h == 1)
+		{
+			dh1.removeAttribute('style',0);
+			hNum.value = h;	
+		}
+		else if(h == 2)
+		{
+			hNum.value = h;
+			dh2.removeAttribute('style',0);
+		}
+		else if(h == 3)
+		{
+			hNum.value = h;
+			dh3.removeAttribute('style',0);	
+		}
+		else
+		{
+			alert("已添加足够多的页眉样式！！");	
+		}
+		
+	}
+	function focuson1()
+	{
+		if(h == 1)
+		{
+			return ;
+		}
+		if(hs1.value == hs2.value)
+		{
+			alert("已定义该类型");
+			return ;
+		}
+		if(h==2)
+		{
+			return ;
+		}
+		if(hs1.value == hs3.value)
+		{
+			alert("已定义该类型");
+			return ;
+		}
+	}
+	function focuson2()
+	{
+		if(hs2.value == hs1.value)
+		{
+			alert("已定义该类型");
+			return ;
+		}
+		if(h == 2)
+		{
+			return ;
+		}
+		if(hs2.value == hs3.value)
+		{
+			alert("已定义该类型");
+			return ;
+		}
+	}
+	function focuson3()
+	{
+		if(hs3.value == hs2.value)
+		{
+			alert("已定义该类型");
+			return ;
+		}
+		if(hs3.value == hs1.value)
+		{
+			alert("已定义该类型");
+			return ;
+		}
+	}
+</script>
+<title>定义样式检查配置文件</title>
+</head>
+<body>
+<form id="myform" action="scon.php" method="post">
+	<!-- 
+		定义段落检查参数
+	 -->
+	<div style="display:none" id="dp1" class="pdiv" align="center">
+		<table>
+			<caption><label>段落样式设置</label></caption>
+			<tbody>
+				<tr>
+					<td>
+						<label>样式名称:</label>
+						<input type="text" maxlength="12" name="psname1"/>
+					</td>
+					<td>
+						<label>样式类别</label>
+						<select name="pOutLine1">
+							<option value="1">章标题</option>
+							<option value="2">节标题</option>
+							<option value="3">条标题</option>
+							<option value="4">款标题</option>
+							<option value="9" selected="selected">正文</option>
+							<option value="8">其他</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>字体大小：</label>
+						<input type="text" maxlength="2" size="2" name="psz1"/>
+					</td>
+					<td>
+						<label>对齐方式：</label>
+						<select name="pjc1">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否换页书写：</label>
+						<input type="checkbox" name ="pgbreak1" value="1"/>
+						<label>是</label>
+					</td>
+					<td><label>定义字体:</label></td>
+				</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="eastAsia1">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="coms1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="ascii1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hascii1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							定义文字样式：
+						</label>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="cb1" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="ci1" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="cu1" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div style="display:none" id="dp2" class="pdiv" align="center">
+		<table>
+			<caption><label>段落样式设置</label></caption>
+			<tbody>
+				<tr>
+					<td>
+						<label>样式名称:</label>
+						<input type="text" maxlength="12" name="psname2"/>
+					</td>
+					<td>
+						<label>样式类别</label>
+						<select name="pOutLine2">
+							<option value="1">章标题</option>
+							<option value="2">节标题</option>
+							<option value="3">条标题</option>
+							<option value="4">款标题</option>
+							<option value="9" selected="selected">正文</option>
+							<option value="8">其他</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>字体大小：</label>
+						<input type="text" maxlength="2" size="2" name="psz2"/>
+					</td>
+					<td>
+						<label>对齐方式：</label>
+						<select name="pjc2">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否换页书写：</label>
+						<input type="checkbox" name ="pgbreak2" value="1" />
+						<label>是</label>
+					</td>
+					<td>
+						<label>定义字体：</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="eastAsia2">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="coms2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="ascii2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hascii2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							定义文字样式：
+						</label>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="cb2" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="ci2" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="cu2" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div style="display:none" id="dp3" class="pdiv" align="center">
+		<table>
+			<caption><label>段落样式设置</label></caption>
+			<tbody>
+				<tr>
+					<td>
+						<label>样式名称:</label>
+						<input type="text" maxlength="12" name="psname3"/>
+					</td>
+					<td>
+						<label>样式类别</label>
+						<select name="pOutLine3">
+							<option value="1">章标题</option>
+							<option value="2">节标题</option>
+							<option value="3">条标题</option>
+							<option value="4">款标题</option>
+							<option value="9" selected="selected">正文</option>
+							<option value="8">其他</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>字体大小：</label>
+						<input type="text" maxlength="2" size="2" name="psz3"/>
+					</td>
+					<td>
+						<label>对齐方式：</label>
+						<select name="pjc3">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否换页书写：</label>
+						<input type="checkbox" name ="pgbreak3" value = "1" />
+						<label>是</label>
+					</td>
+					<td>
+						<label>定义字体：</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="eastAsia3">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="coms3">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="ascii3">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hascii3">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							定义文字样式：
+						</label>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="cb3" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="ci3" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="cu3" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div style="display:none" id="dp4" class="pdiv" align="center">
+		<table>
+			<caption><label>段落样式设置</label></caption>
+			<tbody>
+				<tr>
+					<td>
+						<label>样式名称:</label>
+						<input type="text" maxlength="12" name="psname4"/>
+					</td>
+					<td>
+						<label>样式类别</label>
+						<select name="pOutLine4">
+							<option value="1">章标题</option>
+							<option value="2">节标题</option>
+							<option value="3">条标题</option>
+							<option value="4">款标题</option>
+							<option value="9" selected="selected">正文</option>
+							<option value="8">其他</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>字体大小：</label>
+						<input type="text" maxlength="2" size="2" name="psz4"/>
+					</td>
+					<td>
+						<label>对齐方式：</label>
+						<select name="pjc4">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否换页书写：</label>
+						<input type="checkbox" name ="pgbreak4" value="1" />
+						<label>是</label>
+					</td>
+					<td>
+						<label>定义字体：</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="eastAsia4">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="coms4">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="ascii4">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hascii4">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							定义文字样式：
+						</label>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="cb4" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="ci4" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="cu4" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div style="display:none" id="dp5" class="pdiv" align="center">
+		<table>
+			<caption><label>段落样式设置</label></caption>
+			<tbody>
+				<tr>
+					<td>
+						<label>样式名称:</label>
+						<input type="text" maxlength="12" name="psname5"/>
+					</td>
+					<td>
+						<label>样式类别</label>
+						<select name="pOutLine5">
+							<option value="1">章标题</option>
+							<option value="2">节标题</option>
+							<option value="3">条标题</option>
+							<option value="4">款标题</option>
+							<option value="9" selected="selected">正文</option>
+							<option value="8">其他</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>字体大小：</label>
+						<input type="text" maxlength="2" size="2" name="psz5"/>
+					</td>
+					<td>
+						<label>对齐方式：</label>
+						<select name="pjc5">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否换页书写：</label>
+						<input type="checkbox" name ="pgbreak5" value="1" />
+						<label>是</label>
+					</td>
+					<td>
+						<label>定义字体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="eastAsia5">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="coms5">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="ascii5">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hascii5">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							定义文字样式：
+						</label>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="cb5" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="ci5" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="cu5" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div style="display:none" id="dp6" class="pdiv" align="center">
+		<table>
+			<caption><label>段落样式设置</label></caption>
+			<tbody>
+				<tr>
+					<td>
+						<label>样式名称:</label>
+						<input type="text" maxlength="12" name="psname6"/>
+					</td>
+					<td>
+						<label>样式类别</label>
+						<select name="pOutLine6">
+							<option value="1">章标题</option>
+							<option value="2">节标题</option>
+							<option value="3">条标题</option>
+							<option value="4">款标题</option>
+							<option value="9" selected="selected">正文</option>
+							<option value="8">其他</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>字体大小：</label>
+						<input type="text" maxlength="2" size="2" name="psz6"/>
+					</td>
+					<td>
+						<label>对齐方式：</label>
+						<select name="pjc6">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否换页书写：</label>
+						<input type="checkbox" name ="pgbreak6" value="1" />
+						<label>是</label>
+					</td>
+					<td>
+						<label>定义字体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="eastAsia6">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="coms6">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="ascii6">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hascii6">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>
+							定义文字样式：
+						</label>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="cb6" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="ci6" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="cu6" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- 
+		定义页眉检查参数！
+	 -->
+	<div id="dh1"  style="display:none" class="hdiv" align="center"> 
+		<table>
+			<caption>
+				<label>定义页眉检查参数</label>
+			</caption>
+			<tbody>
+			<tr>
+				<td >
+					<label>样式名称:</label>
+					<input type="text" name="hname1"/>
+				</td>
+				<td>
+					<label>样式类别：</label>
+					<select name="htype1" id="hs1" onchange="focuson1()">
+						<option value="default">默认页眉</option>
+						<option value="odd">奇数页页眉</option>
+						<option value="even">偶数页页眉</option>
+						</select></td>
+						
+				</tr>
+			<tr>
+				<td>
+					<label>页眉内容:</label>
+					<input type="text" name="htext1" />	
+				</td>
+				<td>
+					<label>字体大小：</label>
+					<input type="text" size="2" name="hsz1" />
+				</td>
+			</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="heastAsia1">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="hcoms1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="hascii1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hhascii1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>对齐方式：</label>
+						<select name="hjc1">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="hcb1" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="hci1" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="hcu1" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+	 		<tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="dh2" class="hdiv" align="center" style="display:none"> 
+		<table>
+			<caption>
+				<label>定义页眉检查参数</label>
+			</caption>
+			<tbody>
+			<tr>
+				<td >
+					<label>样式名称:</label>
+					<input type="text" name="hname2"/>
+				</td>
+				<td>
+					<label>样式类别：</label>
+					<select name="htype2" id="hs2" onchange="focuson2()">
+						<option value="default">默认页眉</option>
+						<option value="odd">奇数页页眉</option>
+						<option value="even">偶数页页眉</option>
+						</select></td>
+						
+				</tr>
+			<tr>
+				<td>
+					<label>页眉内容:</label>
+					<input type="text" name="htext2" />	
+				</td>
+				<td>
+					<label>字体大小：</label>
+					<input type="text" size="2" name="hsz2" />
+				</td>
+			</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="heastAsia2">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="hcoms2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="hascii2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hhascii2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>对齐方式：</label>
+						<select name="hjc2">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="hcb2" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="hci2" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="hcu2" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+	 		<tr>
+			</tbody>
+		</table>
+	</div>
+		<div id="dh3" class="hdiv" align="center" style="display:none"> 
+		<table>
+			<caption>
+				<label>定义页眉检查参数</label>
+			</caption>
+			<tbody>
+			<tr>
+				<td >
+					<label>样式名称:</label>
+					<input type="text" name="hname3"/>
+				</td>
+				<td>
+					<label>样式类别：</label>
+					<select name="htype3" id="hs3" onchange="focuson3()">
+						<option value="default">默认页眉</option>
+						<option value="odd">奇数页页眉</option>
+						<option value="even">偶数页页眉</option>
+						</select></td>
+						
+				</tr>
+			<tr>
+				<td>
+					<label>页眉内容:</label>
+					<input type="text" name="htext3" />	
+				</td>
+				<td>
+					<label>字体大小：</label>
+					<input type="text" size="2" name="hsz3" />
+				</td>
+			</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="heastAsia3">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="hcoms3">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="hascii3">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="hhascii3">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>对齐方式：</label>
+						<select name="hjc3">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="hcb3" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="hci3" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="hcu3" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+	 		<tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- 
+		定义表格检查参数
+	 -->
+	 <div>
+	 	<table align="center">
+	 		<caption>
+	 			<label>表格样式设置</label>
+	 		</caption>
+	 		<tbody>
+	 		<tr>
+	 			<td colspan="2">
+	 				<label>表格边线显示：</label>
+	 				<input type="checkbox" name="tbltop" value="1" checked="checked"/>
+	 				<label>上边线</label>
+		 			<input type="checkbox" name="tblbottom" value="1" checked="checked"/>
+	 				<label>下边线</label>
+	 				<input type="checkbox" name="tblleft" value="1"/>
+		 			<label>左边线</label>
+		 			<input type="checkbox" name="tblright" value="1"/>
+	 				<label>右边线</label>
+	 			</td>
+	 		</tr>
+	 		<tr>
+	 				<td>
+						<label>
+							定义表题样式：
+						</label>
+					</td>
+					<td>
+						<label>字体大小：</label>
+						<input type="text" maxlength="2" size="2" name="tblcap"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="teastAsia1">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="tcoms1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="tascii1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="thascii1">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>对齐方式：</label>
+						<select name="tjc1">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="tcb1" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="tci1" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="tcu1" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+	 		<tr>
+	 				<td>
+						<label>
+							定义表内文字样式：
+						</label>
+					</td>
+					<td>
+						<label>字体大小：</label>
+						<input type="text" maxlength="2" size="2" name="tblinsz"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>中文字体：</label>
+						<select name="teastAsia2">
+							<option selected="selected">请选择</option>
+							<option>宋体</option>
+							<option>黑体</option>
+							<option>微软雅黑</option>
+							<option>楷体</option>
+							<option>隶体</option>
+							<option>新宋体</option>
+							<option>仿宋</option>
+							<option>幼圆</option>
+							<option>华文新魏</option>
+							<option>华文琥珀</option>
+							<option>华文行楷</option>
+							<option>华文细黑</option>
+							<option>华文彩云</option>
+						</select>
+					</td>
+					<td>
+						<label>复杂字符：</label>
+						<select name="tcoms2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Ascii:</label>
+						<select name="tascii2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+					<td>
+						<label>hAscii:</label>
+						<select name="thascii2">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>对齐方式：</label>
+						<select name="tjc2">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+					<td>
+						<label>是否加粗：</label>
+						<input type="checkbox" name="tcb2" value="1" />
+						<label>粗体</label>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>是否斜体：</label>
+						<input type="checkbox" name="tci2" value="1" />
+						<label>斜体</label>
+					</td>
+					<td>
+						<label>是否下划线：</label>
+						<input type="checkbox" name="tcu2" value="1" />
+						<label>下划线</label>
+					</td>
+				</tr>
+	 		</tbody>
+	 	</table>
+	 </div>
+	<!-- 
+		定义图片检查参数!
+	 -->
+	<div id="dpic1" class="picdiv" align="center">
+		<table>
+			<caption>
+				<label>
+					图片样式设置
+				</label>
+			</caption>
+			<tbody>
+				<tr>
+					<td>
+						<label>对齐方式：</label>
+						<select name="picjc">
+							<option value="center" selected="selected">居中</option>
+							<option value="left">左对齐</option>
+							<option value="right">右对齐</option>
+							<option value="both">两端对齐</option>
+						</select>
+					</td>
+					<td>
+						<label>图片过大：</label>
+						<input type="checkbox" value="1" name="picControl"/>
+						<label>是</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- 
+		定义页面检查参数！！
+	 -->
+	<div id="dSect1" class="sectdiv" align="center">
+		<table>
+			<caption>
+				<label>页面样式设置及其他</label>
+			</caption>
+			<tbody>
+				<tr>
+					<td>
+						<label>文章总字数：</label>
+						<input type="text" maxlength="6" size="6" name="totalChara"/>
+					</td>
+					<td>
+						<label>纸张大小：</label>
+						<select name="paper">
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+							<option></option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<input type="hidden" value="0" name="pNum" id="pNum"/>
+		<input type="hidden" value="0" name="hNum" id="hNum"/>
+		<input type="button" onclick="setParaVis()" value="添加段落样式"/>
+		<input type="button" onclick="setHeaderVis()" value="添加页眉样式" />
+		<input type="submit" name="Submit" value="保存">
+	</div>
+</form>
+</body>
+</html>
